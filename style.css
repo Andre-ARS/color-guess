@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+}
+
+#colors {
+    display: flex;
+    justify-content: center;
+}
+
+.ball {
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    border: solid 1px black;
+    margin-right: 15px;
+}
+
+

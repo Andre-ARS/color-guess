@@ -84,3 +84,11 @@ function answerCheck(event) {
     }
 }
 colors.addEventListener('click', answerCheck);
+
+// Requisitp 6
+function reset() {
+    optionPaint();
+    rgbCode();
+    document.getElementById('answer').innerText = "Escolha uma cor";
+}
+document.getElementById("reset-game").addEventListener('click', reset)

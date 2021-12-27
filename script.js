@@ -67,11 +67,17 @@ function optionPaint() {
     }
 }
 
-window.onload = function reLoad () {
+window.onload = function () {
+    reLoad()
+}
+
+
+function reLoad () {
     document.getElementById('level').value = 6
     createCircle(parseInt(document.getElementById('level').value));
     optionPaint();
     rgbCode();
+    score = 0
     document.getElementById('answer').innerText = "Escolha uma cor";
     document.getElementById('score').innerText = 'Acertos: ' + score;
 }
@@ -92,6 +98,8 @@ function answerCheck(event) {
             }
         }
     }
+
+    winAlert()
 }
 colors.addEventListener('click', answerCheck);
 
@@ -114,3 +122,16 @@ function levelChange() {
 }
 
 document.getElementById('level').addEventListener('change', levelChange);
+
+// Aviso de vitória
+function winAlert() {
+    if (score >= 21) {
+        alert('Você Venceu!!!')
+
+        while (balls[0]) {        
+            balls[0].outerHTML = '';
+        } 
+
+        reLoad()
+    }
+}

@@ -98,7 +98,7 @@ function answerCheck(event) {
             }
         }
     }
-
+    contrastRight()
     winAlert()
 }
 colors.addEventListener('click', answerCheck);
@@ -108,6 +108,9 @@ function reset() {
     optionPaint();
     rgbCode();
     document.getElementById('answer').innerText = "Escolha uma cor";
+    for (let i = 0; i < balls.length; i += 1) {
+        balls[i].className = 'ball'
+    }
 }
 document.getElementById("reset-game").addEventListener('click', reset)
 
@@ -133,5 +136,16 @@ function winAlert() {
         } 
 
         reLoad()
+    }
+}
+
+// Destaca o certo
+function contrastRight() {
+    for (let i = 0; i < balls.length; i += 1) {
+        if (balls[i].style.backgroundColor !== 'rgb' + codeRgb) {
+            balls[i].classList.add('wrong')
+        } else {
+            balls[i].classList.add('right')
+        }
     }
 }

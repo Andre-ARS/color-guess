@@ -1,8 +1,9 @@
 const colors = document.getElementById('colors');
 const balls = document.getElementsByClassName('ball');
 let colorRgb = [];
-let codeRgb = ''
-let answer = document.getElementById('answer')
+let codeRgb = '';
+let answer = document.getElementById('answer');
+let score = 0
 
 
 
@@ -70,6 +71,7 @@ window.onload = function () {
     optionPaint();
     rgbCode();
     document.getElementById('answer').innerText = "Escolha uma cor";
+    document.getElementById('score').innerText = 'Acertos: ' + score;
 }
 
 
@@ -78,6 +80,8 @@ function answerCheck(event) {
     if (event.target.classList.contains('ball')){
         if (event.target.style.backgroundColor === 'rgb' + codeRgb) {
             document.getElementById('answer').innerText = "Acertou!";
+            score += 3;
+            document.getElementById('score').innerText = 'Acertos: ' + score;
         }else {
             document.getElementById('answer').innerText = "Errou! Tente novamente!";
         }
@@ -85,7 +89,7 @@ function answerCheck(event) {
 }
 colors.addEventListener('click', answerCheck);
 
-// Requisitp 6
+// Requisito 6
 function reset() {
     optionPaint();
     rgbCode();

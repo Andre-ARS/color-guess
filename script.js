@@ -4,6 +4,13 @@ let colorRgb = []
 
 
 
+
+// Requisito 2
+function randomNum() {
+    
+}
+
+
 // Requisito 3
 function createCircle(num) {
     for (let i = 0; i < num; i += 1) {
@@ -50,3 +57,6 @@ function optionPaint() {
     }
 }
 
+window.onload = function () {
+    optionPaint()
+}

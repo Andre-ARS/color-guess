@@ -3,11 +3,18 @@
   font-family: fantasy;
 }
 
+/* body {
+  background-image: url(https://images5.alphacoders.com/102/thumbbig-1024509.webp);
+  background-size: cover;
+} */
+
 #container {
-  border: solid 1px red;
+  border: solid 1px rgba(202, 197, 197, 0.719);
   width: 70%;
   height: 60%;
-  margin: 1.5% auto;
+  margin: 1% auto;
+  background-color: white;
+  border-radius: 20px;
 }
 
 #colors {
@@ -65,6 +72,7 @@
 
 #buttons {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .button {

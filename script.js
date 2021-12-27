@@ -150,4 +150,5 @@ function contrastRight() {
         }
     }
    colors.removeEventListener('click', answerCheck); 
+   document.getElementsByTagName('body')[0].style.backgroundColor = 'rgb' + codeRgb
 }

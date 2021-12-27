@@ -1,6 +1,8 @@
 const colors = document.getElementById('colors');
 const balls = document.getElementsByClassName('ball');
 let colorRgb = [];
+let codeRgb = ''
+let answer = document.getElementById('answer')
 
 
 
@@ -13,8 +15,8 @@ function randomNum() {
 }
 
 function rgbCode() {
-    document.getElementById("rgb-color").innerText = colorRgb[randomNum()];
-
+    codeRgb = document.getElementById("rgb-color").innerText = colorRgb[randomNum()];
+    return codeRgb
 }
 
 
@@ -41,7 +43,7 @@ function rgbGenerator() {
         rgb.push(Math.floor(Math.random() * 256));
     }
     
-    return '(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')';
+    return '(' + rgb[0] + ', ' + rgb[1] + ', ' + rgb[2] + ')';
 }
 
 function randomColors() {
@@ -67,4 +69,18 @@ window.onload = function () {
     createCircle(6);
     optionPaint();
     rgbCode();
+    document.getElementById('answer').innerText = "Escolha uma cor";
 }
+
+
+// Requisito 5
+function answerCheck(event) {
+    if (event.target.classList.contains('ball')){
+        if (event.target.style.backgroundColor === 'rgb' + codeRgb) {
+            document.getElementById('answer').innerText = "Acertou!";
+        }else {
+            document.getElementById('answer').innerText = "Errou! Tente novamente!";
+        }
+    }
+}
+colors.addEventListener('click', answerCheck);

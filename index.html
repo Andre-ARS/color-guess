@@ -8,28 +8,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1 id="title">Adivinhe a Cor!</h1>
-    </header>
-    <main>
-        <section>
-            <p id="rgb-color"></p>
-            <p id="score"></p>
-        </section>
-        <section id="colors">
-        </section>
-        <section>
-            <p id="answer">Escolha uma cor</p>
-        </section>
-        <section>
-            <select name="difficulty" id="level">
-                <option value="3">Fácil</option>
-                <option value="6">Normal</option>
-                <option value="9">Dificil</option>
-            </select>
-            <button type="button" id="reset-game">Próximo</button>
-        </section>
-    </main>
+    <div id="container">
+        <header>
+            <h1 id="title">Adivinhe a Cor!</h1>
+        </header>
+        <main>
+            <section id="text">
+                <p id="rgb-color"></p>
+                <p id="score"></p>
+            </section>
+            <section id="colors">
+            </section>
+            <section>
+                <p id="answer">Escolha uma cor</p>
+            </section>
+            <section id="buttons">
+                <select class="button" name="difficulty" id="level">
+                    <option value="3">Fácil</option>
+                    <option value="6">Normal</option>
+                    <option value="9">Dificil</option>
+                </select>
+                <button class="button" type="button" id="reset-game">Próximo</button>
+            </section>
+        </main>
+    </div>    
     <script src="script.js"></script>
 </body>
 </html>

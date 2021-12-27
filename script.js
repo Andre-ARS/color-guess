@@ -111,6 +111,7 @@ function reset() {
     for (let i = 0; i < balls.length; i += 1) {
         balls[i].className = 'ball'
     }
+    colors.addEventListener('click', answerCheck);
 }
 document.getElementById("reset-game").addEventListener('click', reset)
 
@@ -148,4 +149,5 @@ function contrastRight() {
             balls[i].classList.add('right')
         }
     }
+   colors.removeEventListener('click', answerCheck); 
 }

@@ -25,13 +25,14 @@ function rgbGenerator() {
     let rgb = []
     
     for (let i = 0; i < 3; i += 1) {
-        rgb.push(Math.floor(Math.random() * 255) + 1)
+        rgb.push(Math.floor(Math.random() * 256))
     }
 
     return '(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')' 
 }
 
 function randomColors() {
+   
     for (let index = 0; index < balls.length; index += 1){
         let color = rgbGenerator();
 
@@ -39,4 +40,13 @@ function randomColors() {
     }
 }
 
-randomColors()
+function optionPaint() {
+    colorRgb = []
+
+    randomColors()
+
+    for (let i = 0; i < balls.length; i += 1) {
+        document.getElementsByClassName('ball')[i].style.backgroundColor = 'rgb' + colorRgb[i]
+    }
+}
+

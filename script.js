@@ -1,5 +1,5 @@
-let colors = document.getElementById('colors');
-let balls = document.getElementsByClassName('ball');
+const colors = document.getElementById('colors');
+const balls = document.getElementsByClassName('ball');
 let colorRgb = [];
 
 
@@ -14,7 +14,7 @@ function randomNum() {
 
 function rgbCode() {
     document.getElementById("rgb-color").innerText = colorRgb[randomNum()];
-    
+
 }
 
 
@@ -28,7 +28,6 @@ function createCircle(num) {
     }
 }
 
-createCircle(6)
 
 
 // Requisto 4
@@ -41,30 +40,31 @@ function rgbGenerator() {
     for (let i = 0; i < 3; i += 1) {
         rgb.push(Math.floor(Math.random() * 256));
     }
-
+    
     return '(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')';
 }
 
 function randomColors() {
-   
+    
     for (let index = 0; index < balls.length; index += 1){
         let color = rgbGenerator();
-
+        
         colorRgb.push(color);
     }
 }
 
 function optionPaint() {
     colorRgb = [];
-
-    randomColors()
-
+    
+    randomColors();
+    
     for (let i = 0; i < balls.length; i += 1) {
         document.getElementsByClassName('ball')[i].style.backgroundColor = 'rgb' + colorRgb[i];
     }
 }
 
 window.onload = function () {
+    createCircle(6);
     optionPaint();
     rgbCode();
 }

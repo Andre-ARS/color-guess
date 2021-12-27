@@ -1,9 +1,10 @@
 const colors = document.getElementById('colors');
-const balls = document.getElementsByClassName('ball');
+let balls = document.getElementsByClassName('ball');
 let colorRgb = [];
 let codeRgb = '';
 let answer = document.getElementById('answer');
 let score = 0
+
 
 
 
@@ -67,7 +68,8 @@ function optionPaint() {
 }
 
 window.onload = function () {
-    createCircle(6);
+    document.getElementById('level').value = 6
+    createCircle(parseInt(document.getElementById('level').value));
     optionPaint();
     rgbCode();
     document.getElementById('answer').innerText = "Escolha uma cor";
@@ -96,3 +98,15 @@ function reset() {
     document.getElementById('answer').innerText = "Escolha uma cor";
 }
 document.getElementById("reset-game").addEventListener('click', reset)
+
+// Alterar Dificuldade 
+function levelChange() {
+    while (balls[0]) {        
+        balls[0].outerHTML = '';
+    } 
+    
+    createCircle(parseInt(document.getElementById('level').value));
+    reset();
+}
+
+document.getElementById('level').addEventListener('change', levelChange);

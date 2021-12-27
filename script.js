@@ -67,7 +67,7 @@ function optionPaint() {
     }
 }
 
-window.onload = function () {
+window.onload = function reLoad () {
     document.getElementById('level').value = 6
     createCircle(parseInt(document.getElementById('level').value));
     optionPaint();
@@ -86,6 +86,10 @@ function answerCheck(event) {
             document.getElementById('score').innerText = 'Acertos: ' + score;
         }else {
             document.getElementById('answer').innerText = "Errou! Tente novamente!";
+            if (score > 0) {
+                score -= 1;
+                document.getElementById('score').innerText = 'Acertos: ' + score;
+            }
         }
     }
 }

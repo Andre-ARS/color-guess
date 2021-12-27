@@ -1,12 +1,19 @@
 let colors = document.getElementById('colors');
-let balls = document.getElementsByClassName('ball')
-let colorRgb = []
+let balls = document.getElementsByClassName('ball');
+let colorRgb = [];
 
 
 
 
 // Requisito 2
 function randomNum() {
+    let numBalls = balls.length;
+
+    return  Math.floor(Math.random() * numBalls);
+}
+
+function rgbCode() {
+    document.getElementById("rgb-color").innerText = colorRgb[randomNum()];
     
 }
 
@@ -17,7 +24,7 @@ function createCircle(num) {
         let circle = document.createElement('div');
         
         circle.classList.add('ball');
-        colors.appendChild(circle)
+        colors.appendChild(circle);
     }
 }
 
@@ -29,13 +36,13 @@ createCircle(6)
 // projeto pixels art
 
 function rgbGenerator() {
-    let rgb = []
+    let rgb = [];
     
     for (let i = 0; i < 3; i += 1) {
-        rgb.push(Math.floor(Math.random() * 256))
+        rgb.push(Math.floor(Math.random() * 256));
     }
 
-    return '(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')' 
+    return '(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')';
 }
 
 function randomColors() {
@@ -43,20 +50,21 @@ function randomColors() {
     for (let index = 0; index < balls.length; index += 1){
         let color = rgbGenerator();
 
-        colorRgb.push(color)
+        colorRgb.push(color);
     }
 }
 
 function optionPaint() {
-    colorRgb = []
+    colorRgb = [];
 
     randomColors()
 
     for (let i = 0; i < balls.length; i += 1) {
-        document.getElementsByClassName('ball')[i].style.backgroundColor = 'rgb' + colorRgb[i]
+        document.getElementsByClassName('ball')[i].style.backgroundColor = 'rgb' + colorRgb[i];
     }
 }
 
 window.onload = function () {
-    optionPaint()
+    optionPaint();
+    rgbCode();
 }

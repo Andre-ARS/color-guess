@@ -12,7 +12,7 @@
     height: 80px;
     width: 80px;
     border-radius: 100%;
-    border: solid 1px black;
+    border: solid 1px rgba(161, 156, 156, 0.671);
     margin: 8px;
 }
 
